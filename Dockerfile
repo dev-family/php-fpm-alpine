@@ -31,9 +31,9 @@ RUN apk update \
     pdo_pgsql \
     gd \
     opcache \
-&& printf "y\n" | pecl install mongodb-1.9.0 \
-&& printf "y\n" | pecl install imagick-3.4.4 \
-&& printf "y\n" | pecl install redis-5.3.2 \
+&& printf "yes\n" | pecl install mongodb-1.9.0 \
+&& printf "yes\n" | pecl install imagick-3.4.4 \
+&& printf "yes\n" | pecl install -D 'enable-redis-igbinary="no"' redis-5.3.2 \
 && docker-php-ext-configure exif \
 && docker-php-ext-enable \
     igbinary \
