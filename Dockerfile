@@ -36,7 +36,6 @@ RUN apk update \
 && printf "yes\n" | pecl install -D 'enable-redis-igbinary="no"' redis-5.3.2 \
 && docker-php-ext-configure exif \
 && docker-php-ext-enable \
-    igbinary \
     redis \
     mongodb \
     imagick \
